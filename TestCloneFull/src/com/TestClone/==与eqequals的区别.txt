@@ -1,0 +1,29 @@
+1. == 是一个运算符；equals则是String对象的方法。
+2. 8大基本数据类型，也称原始数据类型。byte,short,char,int,long,float,double,boolean它们之间的比较，应用双等号（==）,比较的是他们的值。
+3. 复合数据类型(类)，当他们用（==）进行比较的时候，比较的是他们在内存中的存放地址，所以，除非是同一个new出来的对象，他们的比较后的结果为true，否则比较后结果为false。
+4. String是一个特殊的引用类型。对于两个字符串的比较，不管是 == 和 equals() 这两者比较的都是字符串是否相同；当你创建两个String对象时，内存中的地址是不相同的，你可以赋相同的值。所以字符串的内容相同。引用地址不一定相同，（相同内容的对象地址不一定相同），但反过来却是肯定的；基本数据类型比较(String 除外) == 和 equals() 两者都是比较值；
+5、public class TestString {
+	public static void main(String[] args) {
+		String str = "hello";
+		String str2 = "hello";
+		System.out.println(str==str2);		//比较的是内容
+		System.out.println(str.equals(str2));
+		/**
+		 * 对于String， new出来的两个不同对象，即使它们的内容相同，
+		 * 但这两个对象所指向的内存地址不一样，例如str3, str4
+		 * str3和str4通new关键字来指向不同的内存地址
+		 * str3==str:比较的是地址
+		 * str3.equals(str4):比较的是地址中的内容
+		 */
+		String str3 = new String("hello");
+		String str4 = new String("hello");
+		System.out.println(str3==str4);
+		System.out.println(str3.equals(str4));
+		/**
+		 * str3存储的是它所指向的对象在内存中的地址，而不是值本身“hello”
+		 * str存储的是值本身“hello”
+		 */
+		System.out.println(str==str3);
+		System.out.println(str.equals(str3));
+	}
+}
