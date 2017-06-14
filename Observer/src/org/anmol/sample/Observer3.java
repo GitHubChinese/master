@@ -1,0 +1,31 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package org.anmol.sample;
+
+/**
+ *
+ * @author ADEE
+ */
+public class Observer3 extends Observer {
+
+    private Member memberObserver;
+
+    public Observer3(Member memberObserver, Expenditure expenditure) {
+        this.memberObserver = memberObserver;
+        this.expenditure = expenditure;
+        this.expenditure.addObserver(this);
+    }
+
+    @Override
+    public void update() {
+        System.out.println("Notification£º" + memberObserver.getName());
+        this.expenditure.getMembers().forEach(member -> {
+            System.out.println("Notification£º" + memberObserver.getName());
+        });
+        System.out.println("Total Expense£º" + this.expenditure.totalExpenses());
+    }
+
+}

@@ -1,0 +1,5 @@
+1、链接：https://github.com/anmoldeep0123/ObserverPatternDemo
+2、这是一个观察者模式的一个例子，实现的是三个人乘车或打的的费用，每增加一个人的乘车费用，就统计所有的乘车费用。Oberver类，是抽象观察者，为所有的具体观察者定义一个抽象类，在得到主题的通知时更新自己；Observer1，Observer2，Observer3是及继承Observer类，Observer1，Observer2，Observer3是具体的观察者，实现抽象观察者角色所要求的更新接口，以便是本身的状态与主题的状态相协调。
+3、Member，Expenditure类，它把所有观察者对象的引用保存在一个聚集里，每个主题都可以有任何数量的观察者。抽象主题提供一个接口，可以增加和删除观察者对象。
+4、Driver类是客户端类。
+5、Observer类中是一个抽象类，类中有一个抽象的方法，用于主体发生变化时通知更新自己。
